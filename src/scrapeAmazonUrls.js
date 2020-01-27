@@ -11,8 +11,8 @@ export async function scrapeProduct(urls) {
 		const page = await browser.newPage();
 		await page.goto(url);
 		// await page.setViewport({ width: 800, height: 600 });
-		await page.waitFor(5000);
 		// await page.screenshot({ path: `stealth${index}.png`, fullPage: true });
+		await page.waitFor(5000);
 
 		const [el] = await page.$x('//*[@id="landingImage"]');
 		const src = await el.getProperty('src');
