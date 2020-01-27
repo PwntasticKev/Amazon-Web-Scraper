@@ -4,15 +4,15 @@ const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin());
 
-async function scrapeProduct(urls) {
+export async function scrapeProduct(urls) {
 	let data = [];
 	urls.map(async function(url, index) {
 		const browser = await puppeteer.launch({ headless: true });
 		const page = await browser.newPage();
 		await page.goto(url);
-		await page.setViewport({ width: 800, height: 600 });
+		// await page.setViewport({ width: 800, height: 600 });
 		await page.waitFor(5000);
-		await page.screenshot({ path: `stealth${index}.png`, fullPage: true });
+		// await page.screenshot({ path: `stealth${index}.png`, fullPage: true });
 
 		const [el] = await page.$x('//*[@id="landingImage"]');
 		const src = await el.getProperty('src');

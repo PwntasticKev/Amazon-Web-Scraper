@@ -1,9 +1,6 @@
 import React from 'react';
 
 export default function ProductList() {
-	function dog () {
-
-	}
   return (
 	<div>
 		<section>
