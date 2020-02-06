@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import '../css/ProductList.scss';
 
 export default function ProductList() {
 
   return (
 	<div>
-		<section>
+	{/* You are only going to code out 1 card */}
+		<section className="testing">
 			<div>img</div>
 		</section>
 		<section>
