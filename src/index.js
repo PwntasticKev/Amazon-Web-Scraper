@@ -4,26 +4,25 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// Firebase App (the core Firebase SDK) is always required and
-// must be listed before other Firebase SDKs
-// import * as firebase from "../.firebaserc";
+
+import * as firebase from "firebase/app";
 
 // Add the Firebase services that you want to use
-// import "firebase/auth";
-// import "firebase/firestore";
+import "firebase/auth";
+import "firebase/firestore";
 
-// var firebaseConfig = {
-// 	apiKey: "api-key",
-// 	authDomain: "project-id.firebaseapp.com",
-// 	databaseURL: "https://project-id.firebaseio.com",
-// 	projectId: "project-id",
-// 	storageBucket: "project-id.appspot.com",
-// 	messagingSenderId: "sender-id",
-// 	appId: "app-id",
-// 	measurementId: "G-measurement-id",
-//   };
+const firebaseConfig = {
+	apiKey: process.env.FIREBASE_KEY,
+	authDomain: "scrape-a4e2c.firebaseapp.com",
+	databaseURL: "https://scrape-a4e2c.firebaseio.com",
+	projectId: "scrape-a4e2c",
+	storageBucket: "scrape-a4e2c.appspot.com",
+	messagingSenderId: "279807376626",
+	appId: "1:279807376626:web:f71eedd8317a43aa7c246b",
+	measurementId: "G-CSXZJVB4R5"
+  };
 
-//   firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
