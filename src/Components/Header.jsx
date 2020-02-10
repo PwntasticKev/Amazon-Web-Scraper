@@ -25,7 +25,7 @@ clickButton() {
 						<li>My Profile</li>
 						<li>Sign Up</li>
 						<li>Log in</li>
-						<li>My Listings</li>
+						<li>My Listings!</li>
 						<button className="" onClick={ () => this.clickButton() }>Click me </button>
 					</ul>
 				</section>
