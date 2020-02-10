@@ -1,0 +1,18 @@
+
+.main-header-container{
+    display: flex;
+    align-items: center; 
+    .header-menu {
+        display: flex;
+        list-style-type: none;
+        &:hover {
+            color:blue;
+        }
+    }
+}
+
+.image-container {
+    background: red;
+    width: 10px;
+    height: 10px;
+}
