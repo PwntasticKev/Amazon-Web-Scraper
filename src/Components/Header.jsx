@@ -9,12 +9,12 @@ class HeaderComponent extends React.Component {
 
 //functions will always go above the render
 clickButton() {
+	// when the button is clicked this function will run
 	this.setState({
+		//we are changignt eh state of the state object on line 6. and setting it to be the oposite of what it currently is. 
 		toggleDiv: !this.state.toggleDiv
+		//consoling loggin the changes once its done. 
 	},_ => console.log(this.state))
-}
-otherButton(){
-	console.log('you clicked me!')
 }
 	render() {
 		return (
@@ -27,7 +27,6 @@ otherButton(){
 						<li>Log in</li>
 						<li>My Listings</li>
 						<button className="" onClick={ () => this.clickButton() }>Click me </button>
-						<button className='' onClick={ () => this.otherButton() }>click me</button>
 					</ul>
 				</section>
 			</div>
