@@ -23,6 +23,7 @@ async function scrapeProduct(urls) {
 		await page.waitFor(5000);
 
 		const [el] = await page.$x('//*[@id="landingImage"]');
+		
 		const src = await el.getProperty('src');
 		const productImg = await src.jsonValue();
 
@@ -36,12 +37,12 @@ async function scrapeProduct(urls) {
 		const buyBoxEl = await buyBoxTxt.jsonValue();
 		const buyBoxUsername = buyBoxEl.trim();
 
-		const [price] = await page.$x('//*[@id="price_inside_buybox"]');
+		// the buy box price is different on different pages. so check if one exists. if not do the other.await page.$x('//*[@id="price_inside_buybox"]'); //*[@id="priceblock_ourprice"] //*[@id="priceblock_ourprice"]
+		let [price] = await page.$x('//*[@id="priceblock_ourprice"]')
 		const priceTxt = await price.getProperty('textContent');
 		const priceTxtJson = await priceTxt.jsonValue();
-		const productPrice = priceTxtJson.trim();
+		var productPrice = priceTxtJson.trim();
 
-		// console.log({productImg, productTitle, buyBoxUsername, productPrice});
 		data.push({ productImg, productTitle, buyBoxUsername, productPrice });
 		console.log(data);
 		await browser.close();
@@ -49,6 +50,7 @@ async function scrapeProduct(urls) {
 }
 
 scrapeProduct([
+	'https://www.amazon.com/LG-27UD68-W-27-Inch-Monitor-FreeSync/dp/B01C3BZIIC/ref=sr_1_4?keywords=lg+4k+monitor&qid=1581044404&sr=8-4',
 	'https://www.amazon.com/Inutile-League-Legends-Unforgiven-Action/dp/B0737K7ZRY/ref=sr_1_3?keywords=league%2Bof%2Blegends+figure&qid=1579825956&sr=8-3'
 ]);
 
