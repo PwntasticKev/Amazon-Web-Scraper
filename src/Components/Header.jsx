@@ -23,6 +23,8 @@ clickButton() {
 				<section>
 					<ul className="header-menu">
 						<li>My Profile</li>
+						<li>Hey im testing this out</li>
+						<li>hey im adding something</li>
 						<li>Sign Up</li>
 						<li>Log in</li>
 						<li>My Listings</li>
